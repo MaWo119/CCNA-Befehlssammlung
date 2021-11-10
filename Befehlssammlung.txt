@@ -72,6 +72,28 @@ encapsulation dot1Q <vlanID> native
 
 ############################################
 
+DHCPv4:
+
+IPs von DHCP ausschließen:
+R1 (config) # ip dhcp excluded-address <low address> <high address>
+
+DHCP Pool erstellen:
+(config) ip dhcp pool <Poolname>
+DHCP-Config
+(dhcp-config) default-router <IP von Gateway>
+(dhcp-config) dns-server <IP von DNS>
+(dhcp-config) network <NetzID> <Subnetzmaske> 
+
+DHCP Relay Agent
+auf interface, auf dem dhcp anfragen angkommen:
+(config-if) ip helper-address <IP von DHCP-Server>
+
+interface auf DHCP stellen:
+(config) int g0/1
+(config-if) ip address dhcp
+
+############################################
+
 Nützliche Befehle:
 no ip domain-lookup
 
