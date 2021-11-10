@@ -1,0 +1,24 @@
+Benutzer + Passwort anlegen:
+username <user> secret <passwd>
+
+Enable Zugang absichern:
+enable secret <passwd>
+
+Kennwörter verschlüsseln:
+service password-encryption
+
+Konsole via Kennwort sichern:
+line con 0
+password <passwd>
+login (local)
+
+vty via Kennwort sichern:
+line vty 0 15
+passwor <passwd>
+login (local)
+transport input ssh
+
+SSH Keygen:
+ip domain-name <domain.com>
+crypto key generate rsa <keylength>
+ip ssh version 2
