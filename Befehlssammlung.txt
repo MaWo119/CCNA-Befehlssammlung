@@ -22,3 +22,13 @@ SSH Keygen:
 ip domain-name <domain.com>
 crypto key generate rsa <keylength>
 ip ssh version 2
+
+############################################
+
+Nützliche Befehle:
+no ip domain-lookup
+
+line con 0 
+logging synchronous => Logging deaktivieren 
+
+interface range FastEthernet0/1-24 
