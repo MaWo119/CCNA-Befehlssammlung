@@ -57,6 +57,21 @@ sobald dies der Fall ist, reagiert der Switch entsprechend und handelt mit der G
 
 ############################################
 
+Statische Route definieren: 
+(config) ip route <Zielnetz> <Subnetzmaske> <Gateway am Router des entfernten Netzes> 
+
+Default Route definieren: 
+(config) ip route 0.0.0.0 0.0.0.0 <Gateway> 
+
+ROAS: 
+interface FastEthernet0/<PortNr>.<SubInt> 
+encapsulation dot1Q <vlanID> 
+ip address <ip address> <subnetz> 
+no shutdown 
+encapsulation dot1Q <vlanID> native 
+
+############################################
+
 Nützliche Befehle:
 no ip domain-lookup
 
