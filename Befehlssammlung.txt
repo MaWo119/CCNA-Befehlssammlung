@@ -78,4 +78,10 @@ no ip domain-lookup
 line con 0 
 logging synchronous => Logging deaktivieren 
 
-interface range FastEthernet0/1-24 
+interface range FastEthernet0/1-24
+
+Nützliche Links:
+
+Subnetze händisch berechnen: https://community.infosecinstitute.com/discussion/38772 
+Subnetzrechenr: https://www.netways.de/netways/subnetz-rechner/ 
+Subnetzliste: https://wiki.manitu.de/index.php/Server:IPv4-Subnetze
