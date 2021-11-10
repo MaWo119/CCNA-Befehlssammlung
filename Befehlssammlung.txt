@@ -25,6 +25,38 @@ ip ssh version 2
 
 ############################################
 
+VLAN erstellen: 
+(config) vlan <id> 
+(config-vlan) name <name> 
+
+VLAN einrichten: 
+(config) interface vlan <id> 
+(config-if) ip address A.B.C.D <Subnetz> 
+
+VLAN-Trunking: 
+(config) int <interface> 
+(config-if) switchport mode trunk 
+## (config-if) switchport trunk encapsulation dot1q #nur notwendig wenn mehrerer Modi unterstützt werden ## 
+
+Native VLAN setzen: 
+(config-if) switchport trunk native vlan <id> 
+
+VLAN-Ports (Access Mode) 
+(config-if) switchport mode access 
+(config-if) switchport access vlan <id> 
+
+Trunking Modes: 
+switchport mode <mode> 
+
+dynamic desirable 
+-Hiermit werden Verhandlungsnachrichten aktiv generiert bzw. es wird auf solche Nachrichten geantwortet, um dynamisch festzulegen, ob das Trunking eingeleitet werden soll. 
+
+dynamic auto 
+-Hierbei wird passiv gewartet, ob Aushandlungsnachrichten für das Trunking empfangen werden; 
+sobald dies der Fall ist, reagiert der Switch entsprechend und handelt mit der Gegenstelle aus, ob das Trunking verwendet werden soll.
+
+############################################
+
 Nützliche Befehle:
 no ip domain-lookup
 
