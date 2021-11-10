@@ -1,0 +1,27 @@
+RIP (Routing Information Protocol):
+-Distanzvektor Routingprotokoll
+-Metrik = Anzahl Hops
+-AD = 120
+
+OSPF (Open Shortest Path First):
+-Link State Routingprotokoll
+-Metrik = Bandbreite
+-AD = 110
+
+Link-State Advertisements (LSAs): Austausch von Informationen über das Netzwerk zwischen Routern
+Link-State Databases (LSDBs): Speicherung von Informationen über das Netzwerk (alle Nachbarbeziehungen)
+Nachbarbeziehungen: Entstehen durch periodischen Austausch von Hello Paketen
+Designated-Router (DR): Schnittstelle für den Austausch von Änderungen (Flooding)
+Backup Designated-Router (BDR): Backup DR für den Designated-Router
+
+Hello-Protokoll:
+    -Senden von Keepalives
+    -Entdeckung neuer Router
+    -Wahl eines Designated-Router
+    
+Vorraussetzung Nachbarbeziehungen:
+    -Interface hochgefahren
+    -gleiches Subnetz
+    -Hello-Dead Timer gleich
+    -Interface nicht passiv
+    -gleiche Area ID

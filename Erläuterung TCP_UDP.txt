@@ -1,0 +1,25 @@
+Well Known Ports (0 - 1.023)
+Registered Ports (1.024 - 49.151)
+Dynamically Allocated Ports (49.152 - 65.535)
+
+TCP:
+-verbindugsorientiert
+-soll Datenverlust verhindern
+-Pakete kommen in gesendeter Reihenfolge an
+Beispiele: HTTP, FTP
+
+UDP:
+-verbindungslos
+-keine Empfangsbestätigung
+-schneller, da Pakete kleiner
+Beispiele: Audio-, Video Streaming
+
+Ablauf 3 Wege Handshake:
+	Aufbau:
+		Client -> SYN     (seq: 100          )
+		Server -> SYN-ACK (seq: 200, ack: 101)
+		Client -> ACK     (          ack: 201)
+	Abbau:
+		Client -> FIN     (seq: 100          )
+		Server -> FIN-ACK (seq: 200, ack: 101)
+		Client -> ACK     (          ack: 201)
