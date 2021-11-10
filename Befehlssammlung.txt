@@ -94,6 +94,22 @@ interface auf DHCP stellen:
 
 ############################################
 
+OSPF
+(config) router ospf <Process ID>
+(config-router) router-id <Router ID>
+(config-router) network <NetzID> <Umgekehrte Subnetzmaske> area <Areanr. (default 1)>
+(config-router) passive-interface <Interface> <— kein OSPF auf diesem Interface
+
+Vorraussetzung Nachbarbeziehungen:
+
+-Gleiches SUbnetz
+-Hello/Dead - Timer
+-gleiche Area
+-Keine passiven Interfaces
+-Eindeutige Router ID
+
+############################################
+
 Nützliche Befehle:
 no ip domain-lookup
 
