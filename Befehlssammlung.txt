@@ -110,6 +110,61 @@ Vorraussetzung Nachbarbeziehungen:
 
 ############################################
 
+Ether-Channel
+PAgP = Port Aggregation Protocol (Dynamische Bünderlung mehrerer physikalischer Ethernet-Verbindungen)
+SW1: Chanel-Group 1 mode desirable
+SW2: Chanel-Group 2 mode desirable/auto
+
+LACP = Link Aggregation Control Protocol (Bündelung mehrerer Netzwerkverbindungen)
+SW1:Chanel-Group 1 mode active
+SW2:Chanel-Group 2 mode active/passive
+
+Static / Maulelle Konfiguration
+SW1: Chanel-Group 1 on
+SW2: Chanel-Group 2 on
+
+show:
+interface port-chanel
+ether chanel summary
+
+##########################################
+
+HSRP - RouterFailover
+-beide Router benötigen eine HSRP Konfiguartion
+-beide Router versenden HSRP-Nachrichten um auszuhandeln, welcher Router active/passive ist
+-Ausfall von R1 -> R2 wird active mit gleicher IP+MAC
+
+R1#standby version 2
+R1#standby [group-number] ip-address X
+R1#standby [group-number] priority X
+R1#standby [group-number] preempt
+
+
+##########################################
+
+VTP VLAN TRUNKING PROTOCOL - DTP DYNAMIC TRUNKING PROTOCOL
+
+vtp mode client / server / transparent
+vtp domain <name>
+vtp password <pw>
+
+#show vtp status
+#show vtp password
+
+###########################################
+
+Standard ACL's
+Troubleshooting - falsche IP - falsches Subnetz/Wildcard - falsche Reihenfolge 
+
+R1(config)# ip access-list extenden 192_to_10
+R1(config-ext-nacl)#20 permit ip any any
+ODER
+R1(config)#int g0/0
+R1(config-if)#no ip access-group 10_to_172 out
+R1(config-if)#ip access-group 10_to_172 in
+
+###########################################
+
 Nützliche Befehle:
 no ip domain-lookup
 
